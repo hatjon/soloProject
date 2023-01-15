@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body class="bg-dark text-white">
+    <div class="d-flex m-auto justify-content-evenly bg-light p-2 align-items-center">
+        <a class="btn btn-primary" href="/">Go Back</a>
+        <h1 class="text-center text-dark">{{user.name}} {{user.lastName}} </h1>
+    </div>
+    <h1 class="text-center">All posts of {{ user.name }}</h1>
+    {% for post in posts %}
+
+    <div class="p-5 border border-1 bg-light text-dark w-50 m-auto mt-5 d-flex justify-content-evenly"> 
+        <img class="w-50 mx-3" src="/static/img/IMAGE_UPLOADS/{{post.image}}" alt="Profile Picture">
+
+        <p>Content: {{post.content}}</p>
+        <p>Created at: {{post.created_at}}</p>
+    </div>
+    {% endfor %}
+</body>
+</html>
